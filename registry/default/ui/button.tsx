@@ -71,7 +71,7 @@ export const baseButtonVariants = cva(
   },
 );
 
-const buttonVariants = cva("", {
+const buttonLayoutVariants = cva("", {
   variants: {
     size: {
       sm: "py-[7px] pl-4 pr-16 h-8",
@@ -112,6 +112,13 @@ const buttonVariants = cva("", {
   },
 });
 
+interface TButtonVariants extends VariantProps<typeof baseButtonVariants>, VariantProps<typeof buttonLayoutVariants> {
+  className?: string;
+}
+
+const buttonVariants = ({ variant, size, className }: TButtonVariants) => 
+  cn(baseButtonVariants({ variant }), buttonLayoutVariants({ variant, size }), className);
+
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
@@ -123,10 +130,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const Comp = asChild ? Slot : "button";
     return (
       <Comp
-        className={cn(
-          baseButtonVariants({ variant }),
-          buttonVariants({ variant, size, className }),
-        )}
+        className={buttonVariants({ variant, size, className })}
         ref={ref}
         {...props}
       />
