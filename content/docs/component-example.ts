@@ -80,5 +80,173 @@ export const componentExample: Record<string, any> = {
         () => import("@/registry/default/example/accordion-flush"),
       ),
     },
+    "accordion-large": {
+      name: "accordion-large",
+      component: React.lazy(
+        () => import("@/registry/default/example/accordion-large"),
+      ),
+    },
+    "accordion-small": {
+      name: "accordion-small",
+      component: React.lazy(
+        () => import("@/registry/default/example/accordion-small"),
+      ),
+    },
+    "checkbox-with-text": {
+      name: "checkbox-with-text",
+      component: React.lazy(
+        () => import("@/registry/default/example/checkbox-with-text"),
+      ),
+    },
+    "checkbox-disabled": {
+      name: "checkbox-disabled",
+      component: React.lazy(
+        () => import("@/registry/default/example/checkbox-disabled"),
+      ),
+    },
+    "button-icon-default": {
+      name: "button-icon-default",
+      component: React.lazy(
+        () => import("@/registry/default/example/button-icon-default"),
+      ),
+    },
+    "button-icon-secondary": {
+      name: "button-icon-secondary",
+      component: React.lazy(
+        () => import("@/registry/default/example/button-icon-secondary"),
+      ),
+    },
+    "button-icon-ghost": {
+      name: "button-icon-ghost",
+      component: React.lazy(
+        () => import("@/registry/default/example/button-icon-ghost"),
+      ),
+    },
+    "button-icon-tertiary": {
+      name: "button-icon-tertiary",
+      component: React.lazy(
+        () => import("@/registry/default/example/button-icon-tertiary"),
+      ),
+    },
+    "button-icon-danger": {
+      name: "button-icon-danger",
+      component: React.lazy(
+        () => import("@/registry/default/example/button-icon-danger"),
+      ),
+    },
+    "button-icon-danger-tertiary": {
+      name: "button-icon-danger-tertiary",
+      component: React.lazy(
+        () => import("@/registry/default/example/button-icon-danger-tertiary"),
+      ),
+    },
+    "button-icon-danger-ghost": {
+      name: "button-icon-danger-ghost",
+      component: React.lazy(
+        () => import("@/registry/default/example/button-icon-danger-ghost"),
+      ),
+    },
+    "button-icon-sizes": {
+      name: "button-icon-sizes",
+      component: React.lazy(
+        () => import("@/registry/default/example/button-icon-sizes"),
+      ),
+    },
+    "input-demo": {
+      name: "input-demo",
+      component: React.lazy(
+        () => import("@/registry/default/example/input-demo"),
+      ),
+    },
+    "input-disabled": {
+      name: "input-disabled",
+      component: React.lazy(
+        () => import("@/registry/default/example/input-disabled"),
+      ),
+    },
+    "input-sizes": {
+      name: "input-sizes",
+      component: React.lazy(
+        () => import("@/registry/default/example/input-sizes"),
+      ),
+    },
+    "popover-demo": {
+      name: "popover-demo",
+      component: React.lazy(
+        () => import("@/registry/default/example/popover-demo"),
+      ),
+    },
+    "popover-with-form": {
+      name: "popover-with-form",
+      component: React.lazy(
+        () => import("@/registry/default/example/popover-with-form"),
+      ),
+    },
+    "radio-group-demo": {
+      name: "radio-group-demo",
+      component: React.lazy(
+        () => import("@/registry/default/example/radio-group-demo"),
+      ),
+    },
+    "radio-group-disabled": {
+      name: "radio-group-disabled",
+      component: React.lazy(
+        () => import("@/registry/default/example/radio-group-disabled"),
+      ),
+    },
+    "tooltip-demo": {
+      name: "tooltip-demo",
+      component: React.lazy(
+        () => import("@/registry/default/example/tooltip-demo"),
+      ),
+    },
+    "tooltip-sizes": {
+      name: "tooltip-sizes",
+      component: React.lazy(
+        () => import("@/registry/default/example/tooltip-sizes"),
+      ),
+    },
+    "tag-demo": {
+      name: "tag-demo",
+      component: React.lazy(
+        () => import("@/registry/default/example/tag-demo"),
+      ),
+    },
+    "tag-colors": {
+      name: "tag-colors",
+      component: React.lazy(
+        () => import("@/registry/default/example/tag-colors"),
+      ),
+    },
+    "tag-sizes": {
+      name: "tag-sizes",
+      component: React.lazy(
+        () => import("@/registry/default/example/tag-sizes"),
+      ),
+    },
+    "dropdown-demo": {
+      name: "dropdown-demo",
+      component: React.lazy(
+        () => import("@/registry/default/example/dropdown-demo"),
+      ),
+    },
+    "dropdown-disabled": {
+      name: "dropdown-disabled",
+      component: React.lazy(
+        () => import("@/registry/default/example/dropdown-disabled"),
+      ),
+    },
+    "dropdown-readonly": {
+      name: "dropdown-readonly",
+      component: React.lazy(
+        () => import("@/registry/default/example/dropdown-readonly"),
+      ),
+    },
+    "dropdown-sizes": {
+      name: "dropdown-sizes",
+      component: React.lazy(
+        () => import("@/registry/default/example/dropdown-sizes"),
+      ),
+    },
   },
 };

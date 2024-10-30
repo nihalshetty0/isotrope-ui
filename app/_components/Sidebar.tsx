@@ -11,12 +11,11 @@ export const sidebarItems = [
   "Button",
   "Checkbox",
   "Dropdown",
-  "Icon Buttons",
+  "Icon Button",
   "Input",
-  "Label",
   "Popover",
   "Radio Group",
-  "Tab",
+  "Tag",
   "Tooltip",
 ];
 
