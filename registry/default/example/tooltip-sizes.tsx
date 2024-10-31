@@ -6,46 +6,29 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/registry/default/ui/tooltip";
+import { PlusIcon } from "@radix-ui/react-icons";
+import { IconButton } from "../ui/icon-button";
 
 export default function TooltipSizes() {
   return (
-    <div className="grid grid-cols-1 border-l border-t border-edge-subtle-00">
-      <div className="flex items-center justify-center border-b border-r border-edge-subtle-00 p-4">
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Button variant="ghost">Small Tooltip</Button>
-            </TooltipTrigger>
-            <TooltipContent size="sm">
-              <p>Small tooltip content</p>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
-      </div>
-      <div className="flex items-center justify-center border-b border-r border-edge-subtle-00 p-4">
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Button variant="ghost">Medium Tooltip</Button>
-            </TooltipTrigger>
-            <TooltipContent size="md">
-              <p>Medium tooltip content</p>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
-      </div>
-      <div className="flex items-center justify-center border-b border-r border-edge-subtle-00 p-4">
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Button variant="ghost">Large Tooltip</Button>
-            </TooltipTrigger>
-            <TooltipContent size="lg">
-              <p>Large tooltip content</p>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
-      </div>
+    <div className="flex flex-col flex-wrap items-center justify-center gap-6">
+      {(["sm", "md", "lg"] as const).map((size) => (
+        <div className="flex flex-col gap-2" key={size}>
+          <p className="body-compact-01">{size}</p>
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button>
+                  Hover me
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent size={size}>
+                <p>This is tooltip content</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        </div>
+      ))}
     </div>
   );
 }

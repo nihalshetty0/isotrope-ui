@@ -15,7 +15,7 @@ export default function TooltipDemo() {
           <Button variant="ghost">Hover me</Button>
         </TooltipTrigger>
         <TooltipContent>
-          <p>Add to library</p>
+          <p>This is tooltip content</p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>

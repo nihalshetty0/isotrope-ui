@@ -2,26 +2,37 @@
 
 import * as React from "react";
 import { useTheme } from "next-themes";
-import { Button } from "../registry/default/ui/button";
+
+import { cn } from "@/lib/utils";
+import { tagVariants } from "../registry/default/ui/tag";
 
 export function ThemeToggle() {
-  const { setTheme, theme } = useTheme();
+  const { theme, setTheme } = useTheme();
+
+  const [mounted, setMounted] = React.useState(false);
+
+  // TODO: fix hydration warning
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
-    <div className="space-x-1">
-      {[
-        { value: "light", label: "Light" },
-        { value: "dim", label: "Dim" },
-        { value: "dark", label: "Dark" },
-        { value: "system", label: "System" },
-      ].map(({ value, label }) => (
-        <Button
-          key={value}
-          variant={theme === value ? "default" : "tertiary"}
-          onClick={() => setTheme(value)}
+    <div className="flex gap-2">
+      {["light", "dim", "dark", "system"].map((t) => (
+        <button
+          className={cn(
+            tagVariants({ variant: t === theme ? "blue" : "outline" }),
+            "focus:ring-1 focus:ring-focus focus:ring-offset-1 focus-visible:outline-none",
+          )}
+          key={t}
+          onClick={() => setTheme(t)}
         >
-          {label}
-        </Button>
+          {t}
+        </button>
       ))}
     </div>
   );

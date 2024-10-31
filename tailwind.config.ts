@@ -435,6 +435,20 @@ const config = {
         "skeleton-element": "hsl(var(--skeleton-element) / <alpha-value>)",
         "toggle-off": "hsl(var(--toggle-off) / <alpha-value>)",
       },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down .11s cubic-bezier(0,0,.38,.9)",
+        "accordion-up": "accordion-up .11s cubic-bezier(0,0,.38,.9)",
+      },
 
       boxShadow: {
         popover: "0 2px 2px 0px rgba(0, 0, 0, 0.2)",

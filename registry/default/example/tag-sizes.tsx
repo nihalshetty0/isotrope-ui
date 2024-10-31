@@ -3,16 +3,13 @@ import { Tag } from "@/registry/default/ui/tag";
 
 export default function TagSizes() {
   return (
-    <div className="grid grid-cols-1 border-l border-t border-edge-subtle-00">
-      <div className="flex items-center justify-center border-b border-r border-edge-subtle-00 p-4">
-        <Tag size="sm">Tag content</Tag>
-      </div>
-      <div className="flex items-center justify-center border-b border-r border-edge-subtle-00 p-4">
-        <Tag size="md">Tag content</Tag>
-      </div>
-      <div className="flex items-center justify-center border-b border-r border-edge-subtle-00 p-4">
-        <Tag size="lg">Tag content</Tag>
-      </div>
+    <div className="flex flex-col flex-wrap items-center justify-center gap-6">
+      {(["sm", "md", "lg"] as const).map((size) => (
+        <div className="space-y-2" key={size}>
+          <p className="body-compact-01">{size}</p>
+          <Tag size={size}>Tag content</Tag>
+        </div>
+      ))}
     </div>
   );
 }

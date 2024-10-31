@@ -1,13 +1,15 @@
 import * as React from "react";
-import { Button } from "@/registry/default/ui/button";
+import { LinkButton } from "@/registry/default/ui/link-button";
 
-export default function ButtonSizes() {
+export default function LinkButtonSizes() {
   return (
     <div className="flex flex-col flex-wrap items-center justify-center gap-6">
-      {(["sm", "md", "lg", "xl", "2xl"] as const).map((size) => (
+      {(["sm", "md", "lg"] as const).map((size) => (
         <div className="space-y-2" key={size}>
           <p className="body-compact-01">{size}</p>
-          <Button size={size}>Button</Button>
+          <LinkButton href="#" size={size}>
+            Link
+          </LinkButton>
         </div>
       ))}
     </div>

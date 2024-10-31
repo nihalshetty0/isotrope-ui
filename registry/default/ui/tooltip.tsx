@@ -13,7 +13,7 @@ const Tooltip = TooltipPrimitive.Root;
 const TooltipTrigger = TooltipPrimitive.Trigger;
 
 const tooltipVariants = cva(
-  "overflow-hidden rounded-sm bg-background-inverse p-4 text-icon-inverse body-compact-01",
+  "overflow-hidden rounded-sm bg-background-inverse p-4 text-icon-inverse body-01",
   {
     variants: {
       size: {

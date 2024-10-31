@@ -80,16 +80,10 @@ export const componentExample: Record<string, any> = {
         () => import("@/registry/default/example/accordion-flush"),
       ),
     },
-    "accordion-large": {
-      name: "accordion-large",
+    "accordion-sizes": {
+      name: "accordion-sizes",
       component: React.lazy(
-        () => import("@/registry/default/example/accordion-large"),
-      ),
-    },
-    "accordion-small": {
-      name: "accordion-small",
-      component: React.lazy(
-        () => import("@/registry/default/example/accordion-small"),
+        () => import("@/registry/default/example/accordion-sizes"),
       ),
     },
     "checkbox-with-text": {
@@ -246,6 +240,48 @@ export const componentExample: Record<string, any> = {
       name: "dropdown-sizes",
       component: React.lazy(
         () => import("@/registry/default/example/dropdown-sizes"),
+      ),
+    },
+    "accordion-disabled": {
+      name: "accordion-disabled",
+      component: React.lazy(
+        () => import("@/registry/default/example/accordion-disabled"),
+      ),
+    },
+    "link-button-demo": {
+      name: "link-button-demo",
+      component: React.lazy(
+        () => import("@/registry/default/example/link-button-demo"),
+      ),
+    },
+    "link-button-sizes": {
+      name: "link-button-sizes",
+      component: React.lazy(
+        () => import("@/registry/default/example/link-button-sizes"),
+      ),
+    },
+    "link-button-disabled": {
+      name: "link-button-disabled",
+      component: React.lazy(
+        () => import("@/registry/default/example/link-button-disabled"),
+      ),
+    },
+    "link-button-inline": {
+      name: "link-button-inline",
+      component: React.lazy(
+        () => import("@/registry/default/example/link-button-inline"),
+      ),
+    },
+    "link-button-as-child": {
+      name: "link-button-as-child",
+      component: React.lazy(
+        () => import("@/registry/default/example/link-button-as-child"),
+      ),
+    },
+    "input-readonly": {
+      name: "input-readonly",
+      component: React.lazy(
+        () => import("@/registry/default/example/input-readonly"),
       ),
     },
   },

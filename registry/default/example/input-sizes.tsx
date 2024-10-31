@@ -3,16 +3,13 @@ import { Input } from "@/registry/default/ui/input";
 
 export default function InputSizes() {
   return (
-    <div className="grid grid-cols-1 border-l border-t border-edge-subtle-00">
-      <div className="flex flex-col border-b border-r border-edge-subtle-00 p-4">
-        <Input inputSize="sm" placeholder="Small input" />
-      </div>
-      <div className="flex flex-col border-b border-r border-edge-subtle-00 p-4">
-        <Input inputSize="md" placeholder="Medium input" />
-      </div>
-      <div className="flex flex-col border-b border-r border-edge-subtle-00 p-4">
-        <Input inputSize="lg" placeholder="Large input" />
-      </div>
+    <div className="space-y-10">
+      {(["sm", "md", "lg"] as const).map((size) => (
+        <div className="min-w-80 space-y-2" key={size}>
+          <span className="body-compact-01">{size}</span>
+          <Input inputSize={size} placeholder={`Email`} />
+        </div>
+      ))}
     </div>
   );
 }

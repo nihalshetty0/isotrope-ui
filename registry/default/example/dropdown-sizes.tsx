@@ -9,43 +9,22 @@ import {
 
 export default function DropdownSizes() {
   return (
-    <div className="grid grid-cols-1 border-l border-t border-edge-subtle-00">
-      <div className="flex items-center justify-center border-b border-r border-edge-subtle-00 p-4">
-        <Dropdown size="sm">
-          <DropdownTrigger>
-            <DropdownValue placeholder="Small dropdown" />
-          </DropdownTrigger>
-          <DropdownContent>
-            <DropdownItem value="option1">Option 1</DropdownItem>
-            <DropdownItem value="option2">Option 2</DropdownItem>
-            <DropdownItem value="option3">Option 3</DropdownItem>
-          </DropdownContent>
-        </Dropdown>
-      </div>
-      <div className="flex items-center justify-center border-b border-r border-edge-subtle-00 p-4">
-        <Dropdown size="md">
-          <DropdownTrigger>
-            <DropdownValue placeholder="Medium dropdown" />
-          </DropdownTrigger>
-          <DropdownContent>
-            <DropdownItem value="option1">Option 1</DropdownItem>
-            <DropdownItem value="option2">Option 2</DropdownItem>
-            <DropdownItem value="option3">Option 3</DropdownItem>
-          </DropdownContent>
-        </Dropdown>
-      </div>
-      <div className="flex items-center justify-center border-b border-r border-edge-subtle-00 p-4">
-        <Dropdown size="lg">
-          <DropdownTrigger>
-            <DropdownValue placeholder="Large dropdown" />
-          </DropdownTrigger>
-          <DropdownContent>
-            <DropdownItem value="option1">Option 1</DropdownItem>
-            <DropdownItem value="option2">Option 2</DropdownItem>
-            <DropdownItem value="option3">Option 3</DropdownItem>
-          </DropdownContent>
-        </Dropdown>
-      </div>
+    <div className="space-y-10">
+      {(["sm", "md", "lg"] as const).map((size) => (
+        <div className="min-w-80 space-y-2" key={size}>
+          <span className="body-compact-01">{size}</span>
+          <Dropdown size={size}>
+            <DropdownTrigger>
+              <DropdownValue placeholder="Select an option" />
+            </DropdownTrigger>
+            <DropdownContent>
+              <DropdownItem value="option1">Option 1</DropdownItem>
+              <DropdownItem value="option2">Option 2</DropdownItem>
+              <DropdownItem value="option3">Option 3</DropdownItem>
+            </DropdownContent>
+          </Dropdown>
+        </div>
+      ))}
     </div>
   );
 }

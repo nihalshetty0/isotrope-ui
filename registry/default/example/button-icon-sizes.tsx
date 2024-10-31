@@ -4,27 +4,15 @@ import { PlusIcon } from "@radix-ui/react-icons";
 
 export default function ButtonIconSizes() {
   return (
-    <div className="grid grid-cols-1 border-l border-t border-edge-subtle-00 lg:grid-cols-4">
-      <div className="flex items-center justify-center border-b border-r border-edge-subtle-00 p-4">
-        <IconButton size="sm">
-          <PlusIcon className="h-4 w-4" />
-        </IconButton>
-      </div>
-      <div className="flex items-center justify-center border-b border-r border-edge-subtle-00 p-4">
-        <IconButton size="md">
-          <PlusIcon className="h-4 w-4" />
-        </IconButton>
-      </div>
-      <div className="flex items-center justify-center border-b border-r border-edge-subtle-00 p-4">
-        <IconButton size="lg">
-          <PlusIcon className="h-4 w-4" />
-        </IconButton>
-      </div>
-      <div className="flex items-center justify-center border-b border-r border-edge-subtle-00 p-4">
-        <IconButton size="xl">
-          <PlusIcon className="h-4 w-4" />
-        </IconButton>
-      </div>
+    <div className="flex flex-col flex-wrap items-center justify-center gap-6">
+      {(["sm", "md", "lg", "xl"] as const).map((size) => (
+        <div className="space-y-2" key={size}>
+          <p className="body-compact-01">{size}</p>
+          <IconButton size={size}>
+            <PlusIcon className="h-4 w-4" />
+          </IconButton>
+        </div>
+      ))}
     </div>
   );
 }

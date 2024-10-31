@@ -58,15 +58,21 @@ const accordionItemVariants = cva("relative", {
   variants: {
     isFlush: {
       false: [
+        // top border. bottom border only on last child
         "border-t-[0.5px] [&:last-child]:border-b-[0.5px] border-edge-subtle-00",
+        // border color on hover state
         "[&[data-state=closed]]:hover:border-layer-hover-01 [&[data-state=closed]+div]:hover:border-t-layer-hover-01",
       ],
       true: [
         "border-transparent",
+        // top border.
         "before:absolute before:inset-x-4 before:top-[-0.5px] before:h-[0.5px] before:bg-edge-subtle-00",
+        // bottom border. only for last child
         "[&:last-child]:after:absolute [&:last-child]:after:inset-x-4 [&:last-child]:after:bottom-[-0.5px] [&:last-child]:after:h-[0.5px] [&:last-child]:after:bg-edge-subtle-00",
-        "hover:before:bg-layer-hover-01 hover:before:inset-x-0 [&[data-state=closed]+div]:hover:before:bg-layer-hover-01",
-        "[&:last-child]:hover:before:bg-layer-hover-01 [&[data-state=closed]:last-child]:hover:after:inset-x-0 [&[data-state=closed]:last-child]:hover:after:bg-layer-hover-01",
+        // hover state for top border
+        "has-[button[data-accordion-trigger]:hover]:before:bg-layer-hover-01 has-[button[data-accordion-trigger]:hover]:before:inset-x-0 [&[data-state=closed]+div]:hover:before:inset-x-0 [&[data-state=closed]+div]:hover:before:bg-layer-hover-01",
+        // hover state for last child's both top and bottom border
+        "[&:last-child]:has-[button[data-accordion-trigger]:hover]:before:bg-layer-hover-01 [&[data-state=closed]:last-child]:hover:after:inset-x-0 [&[data-state=closed]:last-child]:hover:after:bg-layer-hover-01",
       ],
     },
   },
@@ -103,22 +109,32 @@ const AccordionTrigger = React.forwardRef<
         ref={ref}
         className={cn(
           "group/accordion-trigger flex flex-1 items-center justify-between px-4 body-01",
+          // hover state
           "hover:bg-layer-hover-01",
+          // focus state
           "focus:accordion-focus-outline focus-visible:outline-none",
+          // disabled state
           "disabled:cursor-not-allowed disabled:text-foreground-disabled",
+          // alignment
           "group-data-[accordion-align=start]/accordion-root:flex-row-reverse group-data-[accordion-align=start]/accordion-root:justify-end",
+          // size state
           size === "sm" && "h-8",
           size === "md" && "h-10",
           size === "lg" && "h-12",
           className,
         )}
+        data-accordion-trigger
         {...props}
       >
         {children}
         <ChevronDownIcon
           className={cn(
-            "accordion-align-start:mr-2 accordion-align-end:ml-2 h-4 w-4 shrink-0 text-icon-primary transition-transform duration-100 group-disabled/accordion-trigger:text-icon-disabled",
+            "h-4 w-4 shrink-0 text-icon-primary transition-transform duration-100",
+            // disabled state
+            "group-disabled/accordion-trigger:text-icon-disabled",
+            // alignment
             "group-data-[accordion-align=start]/accordion-root:mr-4",
+            // accordion open state
             "group-data-[state=open]/accordion-trigger:rotate-180",
           )}
         />

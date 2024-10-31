@@ -6,9 +6,9 @@ import {
   AccordionTrigger,
 } from "@/registry/default/ui/accordion";
 
-export default function AccordionSmall() {
+export default function AccordionDisabled() {
   return (
-    <Accordion type="single" collapsible className="w-full" size="sm">
+    <Accordion type="single" collapsible className="w-full">
       <AccordionItem value="item-1">
         <AccordionTrigger>Is it accessible?</AccordionTrigger>
         <AccordionContent>
@@ -22,7 +22,11 @@ export default function AccordionSmall() {
           aesthetic.
         </AccordionContent>
       </AccordionItem>
-      <AccordionItem value="item-3">
+      <AccordionItem disabled value="item-3">
+        <AccordionTrigger>Can I disable specific items?</AccordionTrigger>
+        <AccordionContent>Yes.</AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-4">
         <AccordionTrigger>Is it animated?</AccordionTrigger>
         <AccordionContent>
           Yes. It's animated by default, but you can disable it if you prefer.

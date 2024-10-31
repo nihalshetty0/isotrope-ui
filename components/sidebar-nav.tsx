@@ -13,17 +13,21 @@ export const sidebarItems = [
   "Dropdown",
   "Icon Button",
   "Input",
+  "Link Button",
   "Popover",
   "Radio Group",
   "Tag",
   "Tooltip",
 ];
 
-export default function Sidebar() {
+export function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="hidden w-56 md:block">
+    <aside
+      //  className="hidden w-56 overflow-auto md:block"
+      className="fixed top-12 z-30 hidden h-[calc(100vh-3.2rem)] w-full shrink-0 overflow-auto border-r border-edge-subtle-00 md:sticky md:block"
+    >
       <ul className="py-2">
         {sidebarItems.map((item, index) => {
           const itemPath = `/${item.toLowerCase().replace(" ", "-")}`;

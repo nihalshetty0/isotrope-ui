@@ -6,41 +6,36 @@ import {
   AccordionTrigger,
 } from "@/registry/default/ui/accordion";
 
-export default function AccordionSizes() {
+export default function AccordionSmall() {
   return (
-    <div className="grid w-full grid-cols-1">
-      <div className="flex flex-col border-edge-subtle-00 p-4">
-        <Accordion type="single" collapsible className="w-full" size="sm">
-          <AccordionItem value="item-1">
-            <AccordionTrigger>Small Accordion</AccordionTrigger>
-            <AccordionContent>
-              This is a small sized accordion item.
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-2">
-            <AccordionTrigger>Small Accordion</AccordionTrigger>
-            <AccordionContent>
-              This is a small sized accordion item.
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
-      </div>
-      <div className="flex flex-col p-4">
-        <Accordion type="single" collapsible className="w-full" size="lg">
-          <AccordionItem value="item-1">
-            <AccordionTrigger>Large Accordion</AccordionTrigger>
-            <AccordionContent>
-              This is a large sized accordion item.
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-2">
-            <AccordionTrigger>Large Accordion</AccordionTrigger>
-            <AccordionContent>
-              This is a large sized accordion item.
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
-      </div>
+    <div className="w-full space-y-10">
+      {(["sm", "md", "lg"] as const).map((size) => (
+        <div className="space-y-2" key={size}>
+          <p className="body-compact-01">{size}</p>
+          <Accordion type="single" collapsible size={size} className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>Is it accessible?</AccordionTrigger>
+              <AccordionContent>
+                Yes. It adheres to the WAI-ARIA design pattern.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger>Is it styled?</AccordionTrigger>
+              <AccordionContent>
+                Yes. It comes with default styles that matches the other
+                components' aesthetic.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3">
+              <AccordionTrigger>Is it animated?</AccordionTrigger>
+              <AccordionContent>
+                Yes. It's animated by default, but you can disable it if you
+                prefer.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div>
+      ))}
     </div>
   );
 }

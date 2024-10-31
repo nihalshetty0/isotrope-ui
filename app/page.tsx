@@ -6,12 +6,13 @@ import {
   ArrowTopRightIcon,
   InfoCircledIcon,
 } from "@radix-ui/react-icons";
+
 import Link from "next/link";
 
 export default function Home() {
   return (
     <div className="relative h-full">
-      <div className="bg-background-inverses absolute inset-0 -z-10 background-dot-patterns"></div>
+      <div className="absolute inset-0 -z-10 background-dot-patterns"></div>
 
       <div className="md:p-8">
         <h1 className="fluid-heading-06 relative pb-3 pt-12">Isotrope UI</h1>
@@ -38,17 +39,13 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="absolute inset-x-0 bottom-0 flex gap-2 bg-layer-01 px-4 py-3">
+      <div className="absolute inset-x-0 bottom-0 flex items-center gap-2 bg-layer-01 px-4 py-3">
         <InfoCircledIcon className="size-5 shrink-0" />
         <p className="body-compact-01">
-          This project replicates Carbon Design System, implementing components
-          using the patterns implemented in shadcn/ui.
+          This project replicates Carbon Design System, building components with
+          patterns used in shadcn/ui.
         </p>
       </div>
     </div>
   );
-}
-
-{
-  /*  */
 }

@@ -7,15 +7,15 @@ import { Cross2Icon, HamburgerMenuIcon } from "@radix-ui/react-icons";
 import * as Dialog from "@radix-ui/react-dialog";
 
 import Link from "next/link";
-import Sidebar, { sidebarItems } from "./Sidebar";
+import Sidebar, { sidebarItems } from "./sidebar-nav";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/registry/default/ui/button";
-import { ThemeToggle } from "@/registry/theme-toggle";
+import { ThemeToggle } from "@/components/theme-toggle";
 
-const Navigation = () => {
+export const SiteHeader = () => {
   const pathname = usePathname();
   return (
-    <nav className="border-b border-edge-subtle-00 md:container">
+    <nav className="sticky top-0 z-10 border-b border-edge-subtle-00 bg-background px-4">
       <div className="flex h-12 items-center justify-between px-4 md:px-0">
         <div className="flex items-center gap-0.5">
           <Dialog.Root>
@@ -45,7 +45,7 @@ const Navigation = () => {
                   </Dialog.Close>
                 </div>
 
-                <ul className="py-2">
+                <ul className="py-4">
                   {sidebarItems.map((item, index) => {
                     const itemPath = `/${item.toLowerCase().replace(" ", "-")}`;
                     const isActive = pathname === itemPath;
@@ -85,8 +85,6 @@ const Navigation = () => {
     </nav>
   );
 };
-
-export default Navigation;
 
 const Logo = () => {
   return (
