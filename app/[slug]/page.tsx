@@ -1,20 +1,20 @@
-"use client";
-import { useParams } from "next/navigation";
+"use client"
 
-import { allDocs } from "@/.contentlayer/generated";
-import { useMDXComponent } from "next-contentlayer/hooks";
-import { mdxComponents } from "@/components/mdx-components";
+import { allDocs } from "@/.contentlayer/generated"
+import { useMDXComponent } from "next-contentlayer/hooks"
+
+import { mdxComponents } from "@/components/mdx-components"
 
 export default function SlugPage({ params }: { params: { slug: string } }) {
   const doc = allDocs.find(
-    (doc) => doc._raw.flattenedPath === `docs/${params.slug}`,
-  );
+    (doc) => doc._raw.flattenedPath === `docs/${params.slug}`
+  )
 
   if (!doc) {
-    return <div>Document not found</div>;
+    return <div>Document not found</div>
   }
 
-  const MDXContent = useMDXComponent(doc.body.code);
+  const MDXContent = useMDXComponent(doc.body.code)
 
   return (
     <div className="bg-layer-01 p-10">
@@ -26,5 +26,5 @@ export default function SlugPage({ params }: { params: { slug: string } }) {
         </div>
       </div>
     </div>
-  );
+  )
 }
