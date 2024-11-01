@@ -36,7 +36,7 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
   return (
     <div
       className={cn(
-        "mt-2 flex min-h-[350px] w-full items-center justify-center bg-background p-10",
+        "mt-2 flex min-h-[350px] w-full items-center justify-center bg-background p-6 md:p-10",
         className
       )}
     >

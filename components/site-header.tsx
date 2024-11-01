@@ -7,7 +7,7 @@ import { ThemeToggle } from "@/components/theme-toggle"
 
 export const SiteHeader = () => {
   return (
-    <nav className="sticky top-0 z-10 flex h-12 items-center justify-between border-b border-edge-subtle-00 bg-background md:px-4">
+    <nav className="sticky top-0 z-10 flex h-12 items-center justify-between border-b border-edge-subtle-00 bg-background pr-4 md:px-4">
       <div className="flex items-center gap-0.5">
         <MobileNav />
         <Logo />

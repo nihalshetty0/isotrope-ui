@@ -8,10 +8,10 @@ import {
 
 export default function Home() {
   return (
-    <div className="relative h-full">
+    <div className="relative h-[calc(100vh-3rem)]">
       <div className="absolute inset-0 -z-10 background-dot-patterns"></div>
 
-      <div className="md:p-8">
+      <div className="p-4 md:p-8">
         <h1 className="fluid-heading-06 relative pb-3 pt-12">Isotrope UI</h1>
 
         <p className="body-compact-02">

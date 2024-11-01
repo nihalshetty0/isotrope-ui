@@ -19,8 +19,8 @@ export const MobileNav = () => {
         </IconButton>
       </Dialog.Trigger>
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 bg-overlay" />
-        <Dialog.Content className="fixed inset-0 max-w-md bg-background focus:outline-none">
+        <Dialog.Overlay className="fixed inset-0 z-50 bg-overlay" />
+        <Dialog.Content className="fixed inset-0 z-50 max-w-md bg-background focus:outline-none">
           <Dialog.Title className="sr-only">Components</Dialog.Title>
 
           <div className="flex items-center gap-2">
