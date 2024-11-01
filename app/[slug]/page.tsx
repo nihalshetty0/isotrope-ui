@@ -1,17 +1,51 @@
-"use client"
-
+import { notFound } from "next/navigation"
+import { Metadata } from "next/types"
 import { allDocs } from "@/.contentlayer/generated"
-import { useMDXComponent } from "next-contentlayer/hooks"
 
-import { mdxComponents } from "@/components/mdx-components"
+import { Mdx } from "@/components/mdx-components"
 
-export default function SlugPage({ params }: { params: { slug: string } }) {
-  const doc = allDocs.find(
-    (doc) => doc._raw.flattenedPath === `docs/${params.slug}`
-  )
+interface PageProps {
+  params: {
+    slug: string
+  }
+}
+
+async function getDocFromParams({ params }: PageProps) {
+  const doc = allDocs.find((doc) => doc.slug === params.slug)
 
   if (!doc) {
-    return <div>Document not found</div>
+    return null
+  }
+
+  return doc
+}
+
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const doc = await getDocFromParams({ params })
+
+  if (!doc) {
+    return {}
+  }
+
+  return {
+    title: doc.title,
+    description: doc.description,
+  }
+}
+
+export async function generateStaticParams() {
+  return allDocs.map((doc) => ({
+    slug: doc.slug,
+  }))
+}
+
+export default async function SlugPage({ params }: PageProps) {
+  const doc = await getDocFromParams({ params })
+
+  if (!doc) {
+    notFound()
   }
 
   return (
@@ -23,9 +57,4 @@ export default function SlugPage({ params }: { params: { slug: string } }) {
       </div>
     </div>
   )
-}
-
-const Mdx = ({ code }: { code: string }) => {
-  const MDXContent = useMDXComponent(code)
-  return <MDXContent components={mdxComponents} />
 }
