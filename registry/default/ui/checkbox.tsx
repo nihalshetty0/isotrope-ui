@@ -1,5 +1,3 @@
-"use client"
-
 import * as React from "react"
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox"
 import { CheckIcon, DashIcon } from "@radix-ui/react-icons"

@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { buttonVariants } from "@/registry/default/ui/button"
@@ -16,6 +18,7 @@ export const MobileNav = () => {
       <Dialog.Trigger asChild>
         <IconButton className="text-icon-secondary md:hidden" variant="ghost">
           <HamburgerMenuIcon />
+          <span className="sr-only">Open menu</span>
         </IconButton>
       </Dialog.Trigger>
       <Dialog.Portal>

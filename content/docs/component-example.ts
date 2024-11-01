@@ -2,6 +2,39 @@ import * as React from "react"
 
 export const componentExample: Record<string, any> = {
   default: {
+    // Accordion examples
+    "accordion-demo": {
+      name: "accordion-demo",
+      component: React.lazy(
+        () => import("@/registry/default/example/accordion-demo")
+      ),
+    },
+    "accordion-align": {
+      name: "accordion-align",
+      component: React.lazy(
+        () => import("@/registry/default/example/accordion-align")
+      ),
+    },
+    "accordion-flush": {
+      name: "accordion-flush",
+      component: React.lazy(
+        () => import("@/registry/default/example/accordion-flush")
+      ),
+    },
+    "accordion-sizes": {
+      name: "accordion-sizes",
+      component: React.lazy(
+        () => import("@/registry/default/example/accordion-sizes")
+      ),
+    },
+    "accordion-disabled": {
+      name: "accordion-disabled",
+      component: React.lazy(
+        () => import("@/registry/default/example/accordion-disabled")
+      ),
+    },
+
+    // Button examples
     "button-demo": {
       name: "button-demo",
       component: React.lazy(
@@ -62,42 +95,8 @@ export const componentExample: Record<string, any> = {
         () => import("@/registry/default/example/button-as-child")
       ),
     },
-    "accordion-demo": {
-      name: "accordion-demo",
-      component: React.lazy(
-        () => import("@/registry/default/example/accordion-demo")
-      ),
-    },
-    "accordion-align": {
-      name: "accordion-align",
-      component: React.lazy(
-        () => import("@/registry/default/example/accordion-align")
-      ),
-    },
-    "accordion-flush": {
-      name: "accordion-flush",
-      component: React.lazy(
-        () => import("@/registry/default/example/accordion-flush")
-      ),
-    },
-    "accordion-sizes": {
-      name: "accordion-sizes",
-      component: React.lazy(
-        () => import("@/registry/default/example/accordion-sizes")
-      ),
-    },
-    "checkbox-with-text": {
-      name: "checkbox-with-text",
-      component: React.lazy(
-        () => import("@/registry/default/example/checkbox-with-text")
-      ),
-    },
-    "checkbox-disabled": {
-      name: "checkbox-disabled",
-      component: React.lazy(
-        () => import("@/registry/default/example/checkbox-disabled")
-      ),
-    },
+
+    // Button Icon examples
     "button-icon-default": {
       name: "button-icon-default",
       component: React.lazy(
@@ -146,78 +145,22 @@ export const componentExample: Record<string, any> = {
         () => import("@/registry/default/example/button-icon-sizes")
       ),
     },
-    "input-demo": {
-      name: "input-demo",
+
+    // Checkbox examples
+    "checkbox-with-text": {
+      name: "checkbox-with-text",
       component: React.lazy(
-        () => import("@/registry/default/example/input-demo")
+        () => import("@/registry/default/example/checkbox-with-text")
       ),
     },
-    "input-disabled": {
-      name: "input-disabled",
+    "checkbox-disabled": {
+      name: "checkbox-disabled",
       component: React.lazy(
-        () => import("@/registry/default/example/input-disabled")
+        () => import("@/registry/default/example/checkbox-disabled")
       ),
     },
-    "input-sizes": {
-      name: "input-sizes",
-      component: React.lazy(
-        () => import("@/registry/default/example/input-sizes")
-      ),
-    },
-    "popover-demo": {
-      name: "popover-demo",
-      component: React.lazy(
-        () => import("@/registry/default/example/popover-demo")
-      ),
-    },
-    "popover-with-form": {
-      name: "popover-with-form",
-      component: React.lazy(
-        () => import("@/registry/default/example/popover-with-form")
-      ),
-    },
-    "radio-group-demo": {
-      name: "radio-group-demo",
-      component: React.lazy(
-        () => import("@/registry/default/example/radio-group-demo")
-      ),
-    },
-    "radio-group-disabled": {
-      name: "radio-group-disabled",
-      component: React.lazy(
-        () => import("@/registry/default/example/radio-group-disabled")
-      ),
-    },
-    "tooltip-demo": {
-      name: "tooltip-demo",
-      component: React.lazy(
-        () => import("@/registry/default/example/tooltip-demo")
-      ),
-    },
-    "tooltip-sizes": {
-      name: "tooltip-sizes",
-      component: React.lazy(
-        () => import("@/registry/default/example/tooltip-sizes")
-      ),
-    },
-    "tag-demo": {
-      name: "tag-demo",
-      component: React.lazy(
-        () => import("@/registry/default/example/tag-demo")
-      ),
-    },
-    "tag-colors": {
-      name: "tag-colors",
-      component: React.lazy(
-        () => import("@/registry/default/example/tag-colors")
-      ),
-    },
-    "tag-sizes": {
-      name: "tag-sizes",
-      component: React.lazy(
-        () => import("@/registry/default/example/tag-sizes")
-      ),
-    },
+
+    // Dropdown examples
     "dropdown-demo": {
       name: "dropdown-demo",
       component: React.lazy(
@@ -242,12 +185,34 @@ export const componentExample: Record<string, any> = {
         () => import("@/registry/default/example/dropdown-sizes")
       ),
     },
-    "accordion-disabled": {
-      name: "accordion-disabled",
+
+    // Input examples
+    "input-demo": {
+      name: "input-demo",
       component: React.lazy(
-        () => import("@/registry/default/example/accordion-disabled")
+        () => import("@/registry/default/example/input-demo")
       ),
     },
+    "input-disabled": {
+      name: "input-disabled",
+      component: React.lazy(
+        () => import("@/registry/default/example/input-disabled")
+      ),
+    },
+    "input-sizes": {
+      name: "input-sizes",
+      component: React.lazy(
+        () => import("@/registry/default/example/input-sizes")
+      ),
+    },
+    "input-readonly": {
+      name: "input-readonly",
+      component: React.lazy(
+        () => import("@/registry/default/example/input-readonly")
+      ),
+    },
+
+    // Link Button examples
     "link-button-demo": {
       name: "link-button-demo",
       component: React.lazy(
@@ -278,10 +243,66 @@ export const componentExample: Record<string, any> = {
         () => import("@/registry/default/example/link-button-as-child")
       ),
     },
-    "input-readonly": {
-      name: "input-readonly",
+
+    // Popover examples
+    "popover-demo": {
+      name: "popover-demo",
       component: React.lazy(
-        () => import("@/registry/default/example/input-readonly")
+        () => import("@/registry/default/example/popover-demo")
+      ),
+    },
+    "popover-with-form": {
+      name: "popover-with-form",
+      component: React.lazy(
+        () => import("@/registry/default/example/popover-with-form")
+      ),
+    },
+
+    // Radio Group examples
+    "radio-group-demo": {
+      name: "radio-group-demo",
+      component: React.lazy(
+        () => import("@/registry/default/example/radio-group-demo")
+      ),
+    },
+    "radio-group-disabled": {
+      name: "radio-group-disabled",
+      component: React.lazy(
+        () => import("@/registry/default/example/radio-group-disabled")
+      ),
+    },
+
+    // Tag examples
+    "tag-demo": {
+      name: "tag-demo",
+      component: React.lazy(
+        () => import("@/registry/default/example/tag-demo")
+      ),
+    },
+    "tag-colors": {
+      name: "tag-colors",
+      component: React.lazy(
+        () => import("@/registry/default/example/tag-colors")
+      ),
+    },
+    "tag-sizes": {
+      name: "tag-sizes",
+      component: React.lazy(
+        () => import("@/registry/default/example/tag-sizes")
+      ),
+    },
+
+    // Tooltip examples
+    "tooltip-demo": {
+      name: "tooltip-demo",
+      component: React.lazy(
+        () => import("@/registry/default/example/tooltip-demo")
+      ),
+    },
+    "tooltip-sizes": {
+      name: "tooltip-sizes",
+      component: React.lazy(
+        () => import("@/registry/default/example/tooltip-sizes")
       ),
     },
   },
