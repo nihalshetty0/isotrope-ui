@@ -36,7 +36,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="sticky inset-x-0 top-full flex items-center gap-2 bg-layer-01 px-4 py-3">
+      <div className="absolute inset-x-0 bottom-0 flex items-center gap-2 bg-layer-01 px-4 py-3">
         <InfoCircledIcon className="size-5 shrink-0" />
         <p className="body-compact-01">
           This project replicates Carbon Design System, building components with

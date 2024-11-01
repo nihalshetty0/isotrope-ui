@@ -11,7 +11,7 @@ export function Sidebar() {
   const pathname = usePathname()
 
   return (
-    <aside className="sticky top-12 z-30 hidden h-[calc(100vh-3.2rem)] w-full shrink-0 overflow-auto border-r border-edge-subtle-00 md:block">
+    <aside className="sticky top-12 z-30 hidden h-[calc(100vh-3.1rem)] w-full shrink-0 overflow-auto border-r border-edge-subtle-00 md:block">
       <ul className="py-3">
         {docsConfig.sidebarItems.map((item, index) => {
           const itemPath = `/${item.toLowerCase().replace(" ", "-")}`

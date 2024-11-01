@@ -1,24 +1,23 @@
-import "./globals.css";
+import "./globals.css"
 
-import type { Metadata } from "next";
-import { ThemeProvider } from "@/components/theme-provider";
+import type { Metadata } from "next"
 
-import { cn } from "@/lib/utils";
-import { fontMono, fontSans, fontRethink } from "@/lib/fonts";
-
-import { SiteHeader } from "@/components/site-header";
-import { Sidebar } from "@/components/sidebar-nav";
+import { fontMono, fontRethink, fontSans } from "@/lib/fonts"
+import { cn } from "@/lib/utils"
+import { Sidebar } from "@/components/sidebar-nav"
+import { SiteHeader } from "@/components/site-header"
+import { ThemeProvider } from "@/components/theme-provider"
 
 export const metadata: Metadata = {
   title: "Carbon Design System",
   description:
     "A design system for building scalable and accessible web applications.",
-};
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -28,7 +27,7 @@ export default function RootLayout({
           "min-h-screen font-sans antialiased",
           fontSans.variable,
           fontMono.variable,
-          fontRethink.variable,
+          fontRethink.variable
         )}
       >
         <ThemeProvider
@@ -38,9 +37,9 @@ export default function RootLayout({
           disableTransitionOnChange
           themes={["light", "dim", "dark", "system"]}
         >
-          <div className="relative flex min-h-screen flex-col">
+          <div className="relative min-h-screen">
             <SiteHeader />
-            <div className="flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] lg:grid-cols-[240px_minmax(0,1fr)]">
+            <div className="items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] lg:grid-cols-[240px_minmax(0,1fr)]">
               <Sidebar />
               <main className="h-full">{children}</main>
             </div>
@@ -48,5 +47,5 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
-  );
+  )
 }

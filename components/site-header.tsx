@@ -2,21 +2,18 @@
 
 import Link from "next/link"
 
+import { MobileNav } from "@/components/mobile-nav"
 import { ThemeToggle } from "@/components/theme-toggle"
-
-import { MobileNav } from "./mobile-nav"
 
 export const SiteHeader = () => {
   return (
-    <nav className="sticky top-0 z-10 border-b border-edge-subtle-00 bg-background px-4">
-      <div className="flex h-12 items-center justify-between px-4 md:px-0">
-        <div className="flex items-center gap-0.5">
-          <MobileNav />
-          <Logo />
-        </div>
-
-        <ThemeToggle />
+    <nav className="sticky top-0 z-10 flex h-12 items-center justify-between border-b border-edge-subtle-00 bg-background md:px-4">
+      <div className="flex items-center gap-0.5">
+        <MobileNav />
+        <Logo />
       </div>
+
+      <ThemeToggle />
     </nav>
   )
 }

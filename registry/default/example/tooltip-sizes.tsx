@@ -1,13 +1,11 @@
-import * as React from "react";
-import { Button } from "@/registry/default/ui/button";
+import * as React from "react"
+import { Button } from "@/registry/default/ui/button"
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/registry/default/ui/tooltip";
-import { PlusIcon } from "@radix-ui/react-icons";
-import { IconButton } from "../ui/icon-button";
+} from "@/registry/default/ui/tooltip"
 
 export default function TooltipSizes() {
   return (
@@ -18,9 +16,7 @@ export default function TooltipSizes() {
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
-                <Button>
-                  Hover me
-                </Button>
+                <Button>Hover me</Button>
               </TooltipTrigger>
               <TooltipContent size={size}>
                 <p>This is tooltip content</p>
@@ -30,5 +26,5 @@ export default function TooltipSizes() {
         </div>
       ))}
     </div>
-  );
+  )
 }

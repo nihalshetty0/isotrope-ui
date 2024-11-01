@@ -1,28 +1,28 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { CheckIcon, ChevronDownIcon } from "@radix-ui/react-icons";
-import * as SelectPrimitive from "@radix-ui/react-select";
+import * as React from "react"
+import { CheckIcon, ChevronDownIcon } from "@radix-ui/react-icons"
+import * as SelectPrimitive from "@radix-ui/react-select"
+import { cva } from "class-variance-authority"
 
-import { cn } from "@/lib/utils";
-import { cva } from "class-variance-authority";
+import { cn } from "@/lib/utils"
 
 type SelectContextValue = {
-  readOnly: boolean;
-  size: "sm" | "md" | "lg";
-};
+  readOnly: boolean
+  size: "sm" | "md" | "lg"
+}
 
 const SelectContext = React.createContext<SelectContextValue>(
-  {} as SelectContextValue,
-);
+  {} as SelectContextValue
+)
 
 const useSelectContext = () => {
-  const context = React.useContext(SelectContext);
+  const context = React.useContext(SelectContext)
   if (!context) {
-    throw new Error("Select components must be used within a Select");
+    throw new Error("Select components must be used within a Select")
   }
-  return context;
-};
+  return context
+}
 
 const Select = function ({
   children,
@@ -31,13 +31,13 @@ const Select = function ({
   disabled = false,
   ...props
 }: React.ComponentPropsWithoutRef<typeof SelectPrimitive.Root> & {
-  readOnly?: boolean;
-  size?: "sm" | "md" | "lg";
+  readOnly?: boolean
+  size?: "sm" | "md" | "lg"
 }) {
   const selectContextValue = React.useMemo(
     () => ({ readOnly, size }),
-    [readOnly, size],
-  );
+    [readOnly, size]
+  )
 
   return (
     <SelectContext.Provider value={selectContextValue}>
@@ -45,12 +45,12 @@ const Select = function ({
         {children}
       </SelectPrimitive.Root>
     </SelectContext.Provider>
-  );
-};
+  )
+}
 
-Select.displayName = SelectPrimitive.Root.displayName;
+Select.displayName = SelectPrimitive.Root.displayName
 
-const SelectValue = SelectPrimitive.Value;
+const SelectValue = SelectPrimitive.Value
 
 const selectTriggerVariants = cva(
   [
@@ -71,14 +71,14 @@ const selectTriggerVariants = cva(
         true: "disabled:cursor-default disabled:border-edge-subtle-01 disabled:bg-transparent disabled:text-foreground-primary disabled:hover:bg-inherit",
       },
     },
-  },
-);
+  }
+)
 
 const SelectTrigger = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger>
 >(({ className, children, ...props }, ref) => {
-  const { readOnly, size } = useSelectContext();
+  const { readOnly, size } = useSelectContext()
 
   return (
     <SelectPrimitive.Trigger
@@ -92,17 +92,17 @@ const SelectTrigger = React.forwardRef<
         <ChevronDownIcon
           className={cn(
             "h-4 w-4 text-icon-primary transition-transform duration-100 group-disabled/trigger:text-icon-disabled group-data-[state=open]/trigger:rotate-180",
-            { "text-icon-disabled": readOnly },
+            { "text-icon-disabled": readOnly }
           )}
         />
       </SelectPrimitive.Icon>
     </SelectPrimitive.Trigger>
-  );
-});
-SelectTrigger.displayName = SelectPrimitive.Trigger.displayName;
+  )
+})
+SelectTrigger.displayName = SelectPrimitive.Trigger.displayName
 
 const selectContentVariants = cva(
-  "min-w-[var(--radix-select-trigger-width)] shadow-menu",
+  "min-w-[var(--radix-select-trigger-width)] shadow-dropdown",
   {
     variants: {
       size: {
@@ -111,14 +111,14 @@ const selectContentVariants = cva(
         lg: "max-h-[16.5rem]",
       },
     },
-  },
-);
+  }
+)
 
 const SelectContent = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Content>
 >(({ className, children, position = "popper", ...props }, ref) => {
-  const { size } = useSelectContext();
+  const { size } = useSelectContext()
 
   return (
     <SelectPrimitive.Portal>
@@ -131,9 +131,9 @@ const SelectContent = React.forwardRef<
         <SelectPrimitive.Viewport>{children}</SelectPrimitive.Viewport>
       </SelectPrimitive.Content>
     </SelectPrimitive.Portal>
-  );
-});
-SelectContent.displayName = SelectPrimitive.Content.displayName;
+  )
+})
+SelectContent.displayName = SelectPrimitive.Content.displayName
 
 const selectItemVariants = cva(
   [
@@ -152,14 +152,14 @@ const selectItemVariants = cva(
         lg: "px-4 py-[15px]",
       },
     },
-  },
-);
+  }
+)
 
 const SelectItem = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Item>
 >(({ className, children, ...props }, ref) => {
-  const { size } = useSelectContext();
+  const { size } = useSelectContext()
 
   return (
     <SelectPrimitive.Item
@@ -174,17 +174,17 @@ const SelectItem = React.forwardRef<
         </SelectPrimitive.ItemIndicator>
       </span>
     </SelectPrimitive.Item>
-  );
-});
-SelectItem.displayName = SelectPrimitive.Item.displayName;
+  )
+})
+SelectItem.displayName = SelectPrimitive.Item.displayName
 
 // Aligning with design system nomenclature
 
-Select.displayName = "Dropdown";
-SelectValue.displayName = "DropdownValue";
-SelectTrigger.displayName = "DropdownTrigger";
-SelectContent.displayName = "DropdownContent";
-SelectItem.displayName = "DropdownItem";
+Select.displayName = "Dropdown"
+SelectValue.displayName = "DropdownValue"
+SelectTrigger.displayName = "DropdownTrigger"
+SelectContent.displayName = "DropdownContent"
+SelectItem.displayName = "DropdownItem"
 
 export {
   Select as Dropdown,
@@ -192,4 +192,4 @@ export {
   SelectTrigger as DropdownTrigger,
   SelectContent as DropdownContent,
   SelectItem as DropdownItem,
-};
+}
