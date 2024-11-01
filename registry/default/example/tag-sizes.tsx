@@ -1,5 +1,5 @@
-import * as React from "react";
-import { Tag } from "@/registry/default/ui/tag";
+import * as React from "react"
+import { Tag } from "@/registry/default/ui/tag"
 
 export default function TagSizes() {
   return (
@@ -11,5 +11,5 @@ export default function TagSizes() {
         </div>
       ))}
     </div>
-  );
+  )
 }

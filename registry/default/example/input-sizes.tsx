@@ -1,5 +1,5 @@
-import * as React from "react";
-import { Input } from "@/registry/default/ui/input";
+import * as React from "react"
+import { Input } from "@/registry/default/ui/input"
 
 export default function InputSizes() {
   return (
@@ -11,5 +11,5 @@ export default function InputSizes() {
         </div>
       ))}
     </div>
-  );
+  )
 }

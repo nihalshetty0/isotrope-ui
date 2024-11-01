@@ -1,44 +1,45 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import * as AccordionPrimitive from "@radix-ui/react-accordion";
-import { ChevronDownIcon } from "@radix-ui/react-icons";
-import { cva } from "class-variance-authority";
-import { cn } from "@/lib/utils";
+import * as React from "react"
+import * as AccordionPrimitive from "@radix-ui/react-accordion"
+import { ChevronDownIcon } from "@radix-ui/react-icons"
+import { cva } from "class-variance-authority"
+
+import { cn } from "@/lib/utils"
 
 type AccordionContextValue = {
-  isFlush: boolean;
-  size: "sm" | "md" | "lg";
-};
+  isFlush: boolean
+  size: "sm" | "md" | "lg"
+}
 
 const AccordionContext = React.createContext<AccordionContextValue>(
-  {} as AccordionContextValue,
-);
+  {} as AccordionContextValue
+)
 
 const useAccordionContext = () => {
-  const context = React.useContext(AccordionContext);
+  const context = React.useContext(AccordionContext)
   if (!context) {
-    throw new Error("AccordionItem must be used within a Accordion");
+    throw new Error("AccordionItem must be used within a Accordion")
   }
-  return context;
-};
+  return context
+}
 
 const Accordion = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Root> & {
-    align?: "start" | "end";
-    isFlush?: boolean;
-    size?: "sm" | "md" | "lg";
+    align?: "start" | "end"
+    isFlush?: boolean
+    size?: "sm" | "md" | "lg"
   }
 >(
   (
     { align = "end", className, isFlush = false, size = "md", ...props },
-    ref,
+    ref
   ) => {
     const accordionContextValue = React.useMemo(
       () => ({ isFlush, size }),
-      [isFlush, size],
-    );
+      [isFlush, size]
+    )
 
     return (
       <AccordionContext.Provider value={accordionContextValue}>
@@ -49,10 +50,10 @@ const Accordion = React.forwardRef<
           {...props}
         />
       </AccordionContext.Provider>
-    );
-  },
-);
-Accordion.displayName = "Accordion";
+    )
+  }
+)
+Accordion.displayName = "Accordion"
 
 const accordionItemVariants = cva("relative", {
   variants: {
@@ -79,13 +80,13 @@ const accordionItemVariants = cva("relative", {
   defaultVariants: {
     isFlush: false,
   },
-});
+})
 
 const AccordionItem = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>
 >(({ className, ...props }, ref) => {
-  const { isFlush } = useAccordionContext();
+  const { isFlush } = useAccordionContext()
 
   return (
     <AccordionPrimitive.Item
@@ -93,15 +94,15 @@ const AccordionItem = React.forwardRef<
       className={cn(accordionItemVariants({ isFlush }), className)}
       {...props}
     />
-  );
-});
-AccordionItem.displayName = "AccordionItem";
+  )
+})
+AccordionItem.displayName = "AccordionItem"
 
 const AccordionTrigger = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
 >(({ className, children, ...props }, ref) => {
-  const { size } = useAccordionContext();
+  const { size } = useAccordionContext()
 
   return (
     <AccordionPrimitive.Header className="flex">
@@ -121,7 +122,7 @@ const AccordionTrigger = React.forwardRef<
           size === "sm" && "h-8",
           size === "md" && "h-10",
           size === "lg" && "h-12",
-          className,
+          className
         )}
         data-accordion-trigger
         {...props}
@@ -135,14 +136,14 @@ const AccordionTrigger = React.forwardRef<
             // alignment
             "group-data-[accordion-align=start]/accordion-root:mr-4",
             // accordion open state
-            "group-data-[state=open]/accordion-trigger:rotate-180",
+            "group-data-[state=open]/accordion-trigger:rotate-180"
           )}
         />
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
-  );
-});
-AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName;
+  )
+})
+AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName
 
 const AccordionContent = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Content>,
@@ -156,13 +157,13 @@ const AccordionContent = React.forwardRef<
     <div
       className={cn(
         "pb-6 pl-4 pr-12 pt-2 group-data-[accordion-align=start]/accordion-root:pl-12 group-data-[accordion-align=start]/accordion-root:pr-4",
-        className,
+        className
       )}
     >
       {children}
     </div>
   </AccordionPrimitive.Content>
-));
-AccordionContent.displayName = AccordionPrimitive.Content.displayName;
+))
+AccordionContent.displayName = AccordionPrimitive.Content.displayName
 
-export { Accordion, AccordionItem, AccordionTrigger, AccordionContent };
+export { Accordion, AccordionItem, AccordionTrigger, AccordionContent }

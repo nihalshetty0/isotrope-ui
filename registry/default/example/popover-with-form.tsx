@@ -1,12 +1,12 @@
-import * as React from "react";
-import { Button } from "@/registry/default/ui/button";
-import { Input } from "@/registry/default/ui/input";
-import { Label } from "@/registry/default/ui/label";
+import * as React from "react"
+import { Button } from "@/registry/default/ui/button"
+import { Input } from "@/registry/default/ui/input"
+import { Label } from "@/registry/default/ui/label"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/registry/default/ui/popover";
+} from "@/registry/default/ui/popover"
 
 export default function PopoverWithForm() {
   return (
@@ -59,5 +59,5 @@ export default function PopoverWithForm() {
         </div>
       </PopoverContent>
     </Popover>
-  );
+  )
 }

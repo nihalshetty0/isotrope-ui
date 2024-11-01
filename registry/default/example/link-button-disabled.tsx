@@ -1,6 +1,6 @@
-import * as React from "react";
-import { LinkButton } from "@/registry/default/ui/link-button";
+import * as React from "react"
+import { LinkButton } from "@/registry/default/ui/link-button"
 
 export default function LinkButtonDisabled() {
-  return <LinkButton disabled>Link</LinkButton>;
+  return <LinkButton disabled>Link</LinkButton>
 }

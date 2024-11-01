@@ -1,10 +1,10 @@
-import * as React from "react";
-import { Button } from "@/registry/default/ui/button";
+import * as React from "react"
+import { Button } from "@/registry/default/ui/button"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/registry/default/ui/popover";
+} from "@/registry/default/ui/popover"
 
 export default function PopoverDemo() {
   return (
@@ -12,5 +12,5 @@ export default function PopoverDemo() {
       <PopoverTrigger>Open</PopoverTrigger>
       <PopoverContent>Place content for the popover here.</PopoverContent>
     </Popover>
-  );
+  )
 }

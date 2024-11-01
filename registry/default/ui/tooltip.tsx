@@ -1,16 +1,16 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import * as TooltipPrimitive from "@radix-ui/react-tooltip";
+import * as React from "react"
+import * as TooltipPrimitive from "@radix-ui/react-tooltip"
+import { cva, type VariantProps } from "class-variance-authority"
 
-import { cn } from "@/lib/utils";
-import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from "@/lib/utils"
 
-const TooltipProvider = TooltipPrimitive.Provider;
+const TooltipProvider = TooltipPrimitive.Provider
 
-const Tooltip = TooltipPrimitive.Root;
+const Tooltip = TooltipPrimitive.Root
 
-const TooltipTrigger = TooltipPrimitive.Trigger;
+const TooltipTrigger = TooltipPrimitive.Trigger
 
 const tooltipVariants = cva(
   "overflow-hidden rounded-sm bg-background-inverse p-4 text-icon-inverse body-01",
@@ -26,8 +26,8 @@ const tooltipVariants = cva(
     defaultVariants: {
       size: "lg",
     },
-  },
-);
+  }
+)
 
 interface TooltipContentProps
   extends React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>,
@@ -39,7 +39,7 @@ const TooltipContent = React.forwardRef<
 >(
   (
     { className, sideOffset = 4, alignOffset = -8, size, children, ...props },
-    ref,
+    ref
   ) => (
     <TooltipPrimitive.Content
       ref={ref}
@@ -51,8 +51,8 @@ const TooltipContent = React.forwardRef<
       {children}
       <TooltipPrimitive.Arrow className="fill-background-inverse" />
     </TooltipPrimitive.Content>
-  ),
-);
-TooltipContent.displayName = TooltipPrimitive.Content.displayName;
+  )
+)
+TooltipContent.displayName = TooltipPrimitive.Content.displayName
 
-export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider };
+export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider }

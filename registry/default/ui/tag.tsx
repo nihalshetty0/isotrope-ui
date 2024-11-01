@@ -1,7 +1,7 @@
-import * as React from "react";
-import { cva, type VariantProps } from "class-variance-authority";
+import * as React from "react"
+import { cva, type VariantProps } from "class-variance-authority"
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 
 const tagVariants = cva(
   "inline-flex items-center rounded-2xl label-01 whitespace-nowrap ",
@@ -34,8 +34,8 @@ const tagVariants = cva(
       variant: "blue",
       size: "md",
     },
-  },
-);
+  }
+)
 
 export interface TagProps
   extends React.HTMLAttributes<HTMLDivElement>,
@@ -48,8 +48,8 @@ const Tag = React.forwardRef<HTMLDivElement, TagProps>(
       className={cn(tagVariants({ variant, size }), className)}
       {...props}
     />
-  ),
-);
-Tag.displayName = "Tag";
+  )
+)
+Tag.displayName = "Tag"
 
-export { Tag, tagVariants };
+export { Tag, tagVariants }

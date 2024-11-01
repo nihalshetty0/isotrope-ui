@@ -1,4 +1,4 @@
-import { defineDocumentType, makeSource } from "contentlayer/source-files";
+import { defineDocumentType, makeSource } from "contentlayer/source-files"
 
 export const Doc = defineDocumentType(() => ({
   name: "Doc",
@@ -18,9 +18,9 @@ export const Doc = defineDocumentType(() => ({
       resolve: (doc) => `/docs/${doc._raw.flattenedPath}`,
     },
   },
-}));
+}))
 
 export default makeSource({
   contentDirPath: "content",
   documentTypes: [Doc],
-});
+})

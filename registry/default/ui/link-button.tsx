@@ -1,7 +1,8 @@
-import * as React from "react";
-import { Slot } from "@radix-ui/react-slot";
-import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "@/lib/utils";
+import * as React from "react"
+import { Slot } from "@radix-ui/react-slot"
+import { cva, type VariantProps } from "class-variance-authority"
+
+import { cn } from "@/lib/utils"
 
 const linkButtonVariants = cva(
   [
@@ -35,28 +36,28 @@ const linkButtonVariants = cva(
       disabled: false,
       inline: false,
     },
-  },
-);
+  }
+)
 
 interface LinkButtonProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
     VariantProps<typeof linkButtonVariants> {
-  asChild?: boolean;
-  disabled?: boolean;
-  inline?: boolean;
+  asChild?: boolean
+  disabled?: boolean
+  inline?: boolean
 }
 
 const LinkButton = React.forwardRef<HTMLAnchorElement, LinkButtonProps>(
   (
     { className, size, disabled, inline, asChild = false, children, ...props },
-    ref,
+    ref
   ) => {
-    const Comp = asChild ? Slot : "a";
+    const Comp = asChild ? Slot : "a"
 
     return (
       <Comp
         className={cn(
-          linkButtonVariants({ size, disabled, inline, className }),
+          linkButtonVariants({ size, disabled, inline, className })
         )}
         ref={ref}
         aria-disabled={disabled}
@@ -64,9 +65,9 @@ const LinkButton = React.forwardRef<HTMLAnchorElement, LinkButtonProps>(
       >
         {children}
       </Comp>
-    );
-  },
-);
-LinkButton.displayName = "LinkButton";
+    )
+  }
+)
+LinkButton.displayName = "LinkButton"
 
-export { LinkButton, linkButtonVariants };
+export { LinkButton, linkButtonVariants }

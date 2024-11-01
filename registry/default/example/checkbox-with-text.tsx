@@ -1,6 +1,6 @@
-import * as React from "react";
-import { Checkbox } from "@/registry/default/ui/checkbox";
-import { Label } from "@/registry/default/ui/label";
+import * as React from "react"
+import { Checkbox } from "@/registry/default/ui/checkbox"
+import { Label } from "@/registry/default/ui/label"
 
 export default function CheckboxWithText() {
   return (
@@ -10,5 +10,5 @@ export default function CheckboxWithText() {
         Accept terms and conditions
       </Label>
     </div>
-  );
+  )
 }

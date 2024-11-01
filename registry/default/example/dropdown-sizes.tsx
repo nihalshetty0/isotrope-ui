@@ -1,11 +1,11 @@
-import * as React from "react";
+import * as React from "react"
 import {
   Dropdown,
   DropdownContent,
   DropdownItem,
   DropdownTrigger,
   DropdownValue,
-} from "@/registry/default/ui/dropdown";
+} from "@/registry/default/ui/dropdown"
 
 export default function DropdownSizes() {
   return (
@@ -26,5 +26,5 @@ export default function DropdownSizes() {
         </div>
       ))}
     </div>
-  );
+  )
 }

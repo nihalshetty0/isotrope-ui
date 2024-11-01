@@ -1,6 +1,6 @@
-import * as React from "react";
-import { Checkbox } from "@/registry/default/ui/checkbox";
-import { Label } from "@/registry/default/ui/label";
+import * as React from "react"
+import { Checkbox } from "@/registry/default/ui/checkbox"
+import { Label } from "@/registry/default/ui/label"
 
 export default function CheckboxDisabled() {
   return (
@@ -14,5 +14,5 @@ export default function CheckboxDisabled() {
         Disabled checkbox
       </Label>
     </div>
-  );
+  )
 }

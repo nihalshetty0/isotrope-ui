@@ -1,5 +1,5 @@
-import * as React from "react";
-import { Tag } from "@/registry/default/ui/tag";
+import * as React from "react"
+import { Tag } from "@/registry/default/ui/tag"
 
 export default function TagColors() {
   return (
@@ -18,5 +18,5 @@ export default function TagColors() {
       <Tag variant={"outline"}>Tag content</Tag>
       <Tag>Tag content. Extra long long text here.</Tag>
     </div>
-  );
+  )
 }

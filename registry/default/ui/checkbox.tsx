@@ -1,10 +1,10 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
+import * as React from "react"
+import * as CheckboxPrimitive from "@radix-ui/react-checkbox"
+import { CheckIcon, DashIcon } from "@radix-ui/react-icons"
 
-import { cn } from "@/lib/utils";
-import { CheckIcon, DashIcon } from "@radix-ui/react-icons";
+import { cn } from "@/lib/utils"
 
 const Checkbox = React.forwardRef<
   React.ElementRef<typeof CheckboxPrimitive.Root>,
@@ -21,7 +21,7 @@ const Checkbox = React.forwardRef<
         "disabled:data-[state=indeterminate]:border-transparent disabled:data-[state=indeterminate]:bg-icon-disabled",
         "aria-[invalid=true]:border-support-error",
       ],
-      className,
+      className
     )}
     {...props}
   >
@@ -33,8 +33,8 @@ const Checkbox = React.forwardRef<
       )}
     </CheckboxPrimitive.Indicator>
   </CheckboxPrimitive.Root>
-));
+))
 
-Checkbox.displayName = CheckboxPrimitive.Root.displayName;
+Checkbox.displayName = CheckboxPrimitive.Root.displayName
 
-export { Checkbox };
+export { Checkbox }

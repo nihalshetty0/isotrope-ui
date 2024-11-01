@@ -1,5 +1,5 @@
-import * as React from "react";
-import { Button } from "@/registry/default/ui/button";
+import * as React from "react"
+import { Button } from "@/registry/default/ui/button"
 
 export default function ButtonSizes() {
   return (
@@ -11,5 +11,5 @@ export default function ButtonSizes() {
         </div>
       ))}
     </div>
-  );
+  )
 }

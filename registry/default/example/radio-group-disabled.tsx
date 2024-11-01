@@ -1,6 +1,6 @@
-import * as React from "react";
-import { Label } from "@/registry/default/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group";
+import * as React from "react"
+import { Label } from "@/registry/default/ui/label"
+import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group"
 
 export default function RadioGroupDisabled() {
   return (
@@ -24,5 +24,5 @@ export default function RadioGroupDisabled() {
         </Label>
       </div>
     </RadioGroup>
-  );
+  )
 }

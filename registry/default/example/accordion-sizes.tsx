@@ -1,10 +1,10 @@
-import * as React from "react";
+import * as React from "react"
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/registry/default/ui/accordion";
+} from "@/registry/default/ui/accordion"
 
 export default function AccordionSmall() {
   return (
@@ -37,5 +37,5 @@ export default function AccordionSmall() {
         </div>
       ))}
     </div>
-  );
+  )
 }

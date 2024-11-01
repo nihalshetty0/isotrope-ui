@@ -1,6 +1,6 @@
-import * as React from "react";
-import { IconButton } from "@/registry/default/ui/icon-button";
-import { PlusIcon } from "@radix-ui/react-icons";
+import * as React from "react"
+import { IconButton } from "@/registry/default/ui/icon-button"
+import { PlusIcon } from "@radix-ui/react-icons"
 
 export default function ButtonIconSizes() {
   return (
@@ -14,5 +14,5 @@ export default function ButtonIconSizes() {
         </div>
       ))}
     </div>
-  );
+  )
 }
