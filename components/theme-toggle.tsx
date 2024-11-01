@@ -26,7 +26,7 @@ export function ThemeToggle() {
 
   return (
     <Dropdown value={theme} onValueChange={setTheme} size="sm">
-      <DropdownTrigger className="w-[120px]">
+      <DropdownTrigger className="w-[120px]" aria-label="Toggle theme">
         <DropdownValue placeholder="Select theme" />
       </DropdownTrigger>
       <DropdownContent className="z-50">
