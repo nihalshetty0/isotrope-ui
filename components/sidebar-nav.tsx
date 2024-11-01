@@ -14,7 +14,7 @@ export function Sidebar() {
     <aside className="sticky top-12 z-30 hidden h-[calc(100vh-3.1rem)] w-full shrink-0 overflow-auto border-r border-edge-subtle-00 md:block">
       <ul className="py-3">
         {docsConfig.sidebarItems.map((item, index) => {
-          const itemPath = `/${item.toLowerCase().replace(" ", "-")}`
+          const itemPath = `/docs/components/${item.toLowerCase().replace(" ", "-")}`
           const isActive = pathname === itemPath
           return (
             <li key={index} className="relative">

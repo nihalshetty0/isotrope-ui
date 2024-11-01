@@ -38,7 +38,7 @@ export const MobileNav = () => {
 
           <ul className="py-4">
             {docsConfig.sidebarItems.map((item, index) => {
-              const itemPath = `/${item.toLowerCase().replace(" ", "-")}`
+              const itemPath = `/docs/components/${item.toLowerCase().replace(" ", "-")}`
               const isActive = pathname === itemPath
               return (
                 <li key={index} className="relative">

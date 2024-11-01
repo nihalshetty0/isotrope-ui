@@ -21,7 +21,10 @@ export default function Home() {
         <p className="body-compact-02">{siteConfig.description}</p>
 
         <div className="mt-12 flex flex-col gap-4 lg:flex-row [&>*]:[inline-size:100%] [&>*]:[max-inline-size:14rem]">
-          <Link href={"/accordion"} className={buttonVariants({})}>
+          <Link
+            href={"/docs/components/accordion"}
+            className={buttonVariants({})}
+          >
             Browse components
             <ArrowRightIcon />
           </Link>
