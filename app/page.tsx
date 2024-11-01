@@ -6,18 +6,19 @@ import {
   InfoCircledIcon,
 } from "@radix-ui/react-icons"
 
+import { siteConfig } from "@/config/site"
+
 export default function Home() {
   return (
     <div className="relative h-[calc(100vh-3rem)]">
       <div className="absolute inset-0 -z-10 background-dot-patterns"></div>
 
       <div className="p-4 md:p-8">
-        <h1 className="fluid-heading-06 relative pb-3 pt-12">Isotrope UI</h1>
+        <h1 className="fluid-heading-06 relative pb-3 pt-12">
+          {siteConfig.name}
+        </h1>
 
-        <p className="body-compact-02">
-          Beautifully designed components that you can copy and paste into your
-          apps.
-        </p>
+        <p className="body-compact-02">{siteConfig.description}</p>
 
         <div className="mt-12 flex flex-col gap-4 lg:flex-row [&>*]:[inline-size:100%] [&>*]:[max-inline-size:14rem]">
           <Link href={"/accordion"} className={buttonVariants({})}>
@@ -25,10 +26,7 @@ export default function Home() {
             <ArrowRightIcon />
           </Link>
           <Button asChild variant={"tertiary"}>
-            <a
-              href={"https://github.com/nihalshetty0/isotrope-ui"}
-              target="_blank"
-            >
+            <a href={siteConfig.links.github} target="_blank">
               Github
               <ArrowTopRightIcon />
             </a>

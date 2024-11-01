@@ -2,6 +2,7 @@ import "./globals.css"
 
 import type { Metadata } from "next"
 
+import { siteConfig } from "@/config/site"
 import { fontMono, fontRethink, fontSans } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
 import { Sidebar } from "@/components/sidebar-nav"
@@ -9,9 +10,48 @@ import { SiteHeader } from "@/components/site-header"
 import { ThemeProvider } from "@/components/theme-provider"
 
 export const metadata: Metadata = {
-  title: "Carbon Design System",
-  description:
-    "A design system for building scalable and accessible web applications.",
+  title: {
+    default: siteConfig.name,
+    template: `%s - ${siteConfig.name}`,
+  },
+  metadataBase: new URL(siteConfig.url),
+  description: siteConfig.description,
+  keywords: [
+    "Next.js",
+    "React",
+    "Tailwind CSS",
+    "Server Components",
+    "Radix UI",
+  ],
+  authors: [
+    {
+      name: "Nihal Shetty",
+      url: "https://github.com/nihalshetty0",
+    },
+  ],
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteConfig.url,
+    title: siteConfig.name,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 980,
+        height: 360,
+        alt: siteConfig.name,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
+    creator: "@nihalshetty0",
+  },
 }
 
 export default function RootLayout({
