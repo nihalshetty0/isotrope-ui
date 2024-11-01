@@ -14,17 +14,18 @@ export default function SlugPage({ params }: { params: { slug: string } }) {
     return <div>Document not found</div>
   }
 
-  const MDXContent = useMDXComponent(doc.body.code)
-
   return (
     <div className="bg-layer-01 p-6 md:p-10">
       <div className="max-w-2xl">
         <h1 className="mb-1 heading-04">{doc.title}</h1>
         <p className="body-compact-02">{doc.description}</p>
-        <div className="pt-3">
-          <MDXContent components={mdxComponents} />
-        </div>
+        <Mdx code={doc.body.code} />
       </div>
     </div>
   )
+}
+
+const Mdx = ({ code }: { code: string }) => {
+  const MDXContent = useMDXComponent(code)
+  return <MDXContent components={mdxComponents} />
 }
