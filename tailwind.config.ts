@@ -1,8 +1,9 @@
-import type { Config } from "tailwindcss";
-import plugin from "tailwindcss/plugin";
-const { fontFamily } = require("tailwindcss/defaultTheme");
+import type { Config } from "tailwindcss"
+import plugin from "tailwindcss/plugin"
 
-const colors = require("tailwindcss/colors");
+const { fontFamily } = require("tailwindcss/defaultTheme")
+
+const colors = require("tailwindcss/colors")
 
 const config = {
   darkMode: ["class"],
@@ -11,13 +12,15 @@ const config = {
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
+    "./content/**/*.{md,mdx}",
+    "./registry/**/*.{ts,tsx}",
   ],
   theme: {
     container: {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        "3xl": "1784px",
       },
     },
     screens: {
@@ -433,8 +436,23 @@ const config = {
         "skeleton-element": "hsl(var(--skeleton-element) / <alpha-value>)",
         "toggle-off": "hsl(var(--toggle-off) / <alpha-value>)",
       },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down .11s cubic-bezier(0,0,.38,.9)",
+        "accordion-up": "accordion-up .11s cubic-bezier(0,0,.38,.9)",
+      },
 
       boxShadow: {
+        dropdown: "0px 2px 6px 0px rgba(0, 0, 0, 0.30)",
         popover: "0 2px 2px 0px rgba(0, 0, 0, 0.2)",
         input:
           "inset 0 2px 0 0 hsl(var(--focus)), inset -2px 0 0 0 hsl(var(--focus)), inset 2px 0 0 0 hsl(var(--focus)), inset 0 -1px 0 0 hsl(var(--focus))",
@@ -589,7 +607,7 @@ const config = {
           position: "relative",
           zIndex: "2",
         },
-      });
+      })
 
       addComponents({
         ".fluid-heading-03": {
@@ -790,9 +808,17 @@ const config = {
             letterSpacing: "-0.96px",
           },
         },
-      });
+      })
+
+      addUtilities({
+        ".background-dot-patterns": {
+          backgroundImage:
+            "radial-gradient(hsl(var(--background-inverse)/0.2) 1px, transparent 0)",
+          backgroundSize: "56px 56px",
+        },
+      })
     }),
   ],
-} satisfies Config;
+} satisfies Config
 
-export default config;
+export default config

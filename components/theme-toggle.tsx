@@ -1,28 +1,40 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { useTheme } from "next-themes";
-import { Button } from "./ui/button";
+import * as React from "react"
+import {
+  Dropdown,
+  DropdownContent,
+  DropdownItem,
+  DropdownTrigger,
+  DropdownValue,
+} from "@/registry/default/ui/dropdown"
+import { useTheme } from "next-themes"
 
 export function ThemeToggle() {
-  const { setTheme, theme } = useTheme();
+  const { theme, setTheme } = useTheme()
+
+  const [mounted, setMounted] = React.useState(false)
+
+  // TODO: fix hydration warning
+  React.useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return null
+  }
 
   return (
-    <div className="space-x-1">
-      {[
-        { value: "light", label: "Light" },
-        { value: "dim", label: "Dim" },
-        { value: "dark", label: "Dark" },
-        { value: "system", label: "System" },
-      ].map(({ value, label }) => (
-        <Button
-          key={value}
-          variant={theme === value ? "default" : "tertiary"}
-          onClick={() => setTheme(value)}
-        >
-          {label}
-        </Button>
-      ))}
-    </div>
-  );
+    <Dropdown value={theme} onValueChange={setTheme} size="sm">
+      <DropdownTrigger className="w-[120px]" aria-label="Toggle theme">
+        <DropdownValue placeholder="Select theme" />
+      </DropdownTrigger>
+      <DropdownContent className="z-50">
+        <DropdownItem value="light">Light</DropdownItem>
+        <DropdownItem value="dim">Dim</DropdownItem>
+        <DropdownItem value="dark">Dark</DropdownItem>
+        <DropdownItem value="system">System</DropdownItem>
+      </DropdownContent>
+    </Dropdown>
+  )
 }
