@@ -17,7 +17,7 @@ export const fontMono = FontMono({
 })
 
 export const fontRethink = Rethink_Sans({
-  weight: ["500", "600", "700"],
+  weight: ["500"],
   subsets: ["latin"],
   variable: "--font-rethink",
 })

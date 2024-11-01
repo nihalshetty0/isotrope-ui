@@ -1,5 +1,4 @@
 import * as React from "react"
-import dynamic from "next/dynamic"
 import { componentExample } from "@/content/docs/component-example"
 
 import { cn } from "@/lib/utils"
@@ -12,7 +11,6 @@ interface ComponentPreviewProps {
 
 const ComponentPreview: React.FC<ComponentPreviewProps> = ({
   name,
-  description,
   className,
 }) => {
   const Preview = React.useMemo(() => {
@@ -21,11 +19,7 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
     if (!Component) {
       return (
         <p className="text-muted-foreground text-sm">
-          Component{" "}
-          <code className="bg-muted relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm">
-            {name}
-          </code>{" "}
-          not found in registry.
+          Component {name} not found in registry.
         </p>
       )
     }
