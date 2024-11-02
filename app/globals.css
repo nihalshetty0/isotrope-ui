@@ -977,7 +977,7 @@
     /* Miscellaneous Tokens */
     --interactive: var(--blue-50);
     --highlight: var(--blue-90);
-    --overlay: var(--gray-100) / 0.7;
+    --overlay: var(--black) / 0.65;
     --skeleton-background: var(--gray-80-hover);
     --skeleton-element: var(--gray-70);
     --toggle-off: var(--gray-60);
