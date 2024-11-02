@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@/registry/default/ui/button";
 
 import {
   DropdownMenu,
@@ -16,15 +16,15 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { IconButton } from "@/components/ui/icon-button";
-import { Separator } from "@/components/ui/seperator";
+} from "@/registry/default/ui/dropdown-menu";
+import { IconButton } from "@/registry/default/ui/icon-button";
+import { Separator } from "@/registry/default/ui/seperator";
 import {
   Tooltip,
   TooltipProvider,
   TooltipTrigger,
   TooltipContent,
-} from "@/components/ui/tooltip";
+} from "@/registry/default/ui/tooltip";
 import {
   ChevronDownIcon,
   DotFilledIcon,
