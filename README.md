@@ -1,4 +1,4 @@
-# z-ui
+# Isotrope UI
 
 Accessible and customizable components based on carbon design system that you can copy and paste into your app. Free. Open Source.
 
