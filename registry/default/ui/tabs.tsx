@@ -35,7 +35,7 @@ const Tabs = React.forwardRef<
       <TabsPrimitive.Root
         ref={ref}
         className={cn(
-          "data-[orientation=vertical]:grid data-[orientation=vertical]:grid-cols-8",
+          "data-[orientation=vertical]:grid data-[orientation=vertical]:grid-cols-8 data-[orientation=vertical]:bg-layer-01",
           className
         )}
         {...props}

@@ -305,5 +305,25 @@ export const componentExample: Record<string, any> = {
         () => import("@/registry/default/example/tooltip-sizes")
       ),
     },
+
+    // Tabs examples
+    "tabs-demo": {
+      name: "tabs-demo",
+      component: React.lazy(
+        () => import("@/registry/default/example/tabs-demo")
+      ),
+    },
+    "tabs-contained": {
+      name: "tabs-contained",
+      component: React.lazy(
+        () => import("@/registry/default/example/tabs-contained")
+      ),
+    },
+    "tabs-vertical": {
+      name: "tabs-vertical",
+      component: React.lazy(
+        () => import("@/registry/default/example/tabs-vertical")
+      ),
+    },
   },
 }

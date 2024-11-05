@@ -9,6 +9,7 @@ export const docsConfig = {
     "Link Button",
     "Popover",
     "Radio Group",
+    "Tabs",
     "Tag",
     "Tooltip",
   ],
