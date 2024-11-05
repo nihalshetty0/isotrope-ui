@@ -7,12 +7,7 @@ import {
 
 export default function TabsVertical() {
   return (
-    <Tabs
-      defaultValue="account"
-      contained
-      orientation="vertical"
-      className="h-[400px] w-full"
-    >
+    <Tabs defaultValue="account" contained orientation="vertical">
       <TabList>
         <TabVerticalTrigger value="account">Account</TabVerticalTrigger>
         <TabVerticalTrigger value="password">Password</TabVerticalTrigger>
