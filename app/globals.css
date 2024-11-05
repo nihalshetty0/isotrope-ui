@@ -361,7 +361,7 @@
     --field-hover-03: var(--gray-10-hover);
 
     /* Border */
-    --border-interactive: var(--gray-60);
+    --border-interactive: var(--blue-60);
     --border-subtle-00: var(--gray-20);
     --border-subtle-01: var(--gray-30);
     --border-subtle-02: var(--gray-20);
